@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMessage;
 
 class PageController extends Controller
 {
@@ -158,6 +160,15 @@ class PageController extends Controller
             'message' => 'required|string|max:2000',
         ]);
 
-        return redirect()->route('contact')->with('success', 'Thanks! Your message reached us — we\'ll reply within a few hours.');
+        Mail::to(config('mail.from.address'))->send(
+            new ContactMessage(
+                senderName:   $validated['name'],
+                senderEmail:  $validated['email'],
+                subject:      $validated['subject'],
+                messageBody:  $validated['message'],
+            )
+        );
+
+        return redirect()->route('contact')->with('success', 'Thanks, ' . $validated['name'] . '! Your message has been sent — we\'ll reply within a few hours.');
     }
 }
