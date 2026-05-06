@@ -162,10 +162,10 @@ class PageController extends Controller
 
         Mail::to(config('mail.from.address'))->send(
             new ContactMessage(
-                senderName:   $validated['name'],
-                senderEmail:  $validated['email'],
-                subject:      $validated['subject'],
-                messageBody:  $validated['message'],
+                senderName:     $validated['name'],
+                senderEmail:    $validated['email'],
+                messageSubject: $validated['subject'],
+                messageBody:    $validated['message'],
             )
         );
 

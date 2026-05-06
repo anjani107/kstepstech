@@ -15,7 +15,7 @@ class ContactMessage extends Mailable
     public function __construct(
         public readonly string $senderName,
         public readonly string $senderEmail,
-        public readonly string $subject,
+        public readonly string $messageSubject,
         public readonly string $messageBody,
     ) {}
 
@@ -23,7 +23,7 @@ class ContactMessage extends Mailable
     {
         return new Envelope(
             replyTo: [new Address($this->senderEmail, $this->senderName)],
-            subject: 'New Contact: ' . $this->subject,
+            subject: 'New Contact: ' . $this->messageSubject,
         );
     }
 
