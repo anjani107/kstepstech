@@ -147,8 +147,8 @@
                     </ul>
                     <div class="prod-card__footer">
                         <div>
-                            <div class="prod-card__price">₹12,999 <sub>one-time</sub></div>
-                            <div class="prod-card__old">₹18,999</div>
+                            <!-- <div class="prod-card__price">₹12,999 <sub>one-time</sub></div>
+                            <div class="prod-card__old">₹18,999</div> -->
                         </div>
                         <a href="https://wa.me/918693829219?text={{ urlencode('Hi! I want to know about Classes Management System') }}"
                            target="_blank" rel="noopener" class="btn btn--primary">Enquire →</a>
@@ -176,9 +176,9 @@
                         <li>Billing &amp; insurance</li>
                     </ul>
                     <div class="prod-card__footer">
-                        <div>
+                        <!-- <div>
                             <div class="prod-card__price">₹9,999 <sub>one-time</sub></div>
-                        </div>
+                        </div> -->
                         <a href="https://wa.me/918693829219?text={{ urlencode('Hi! I want to know about Clinic Management System') }}"
                            target="_blank" rel="noopener" class="btn btn--primary">Enquire →</a>
                     </div>
@@ -205,10 +205,10 @@
                         <li>Sales reports &amp; insights</li>
                     </ul>
                     <div class="prod-card__footer">
-                        <div>
+                        <!-- <div>
                             <div class="prod-card__price">₹14,999 <sub>one-time</sub></div>
                             <div class="prod-card__old">₹20,999</div>
-                        </div>
+                        </div> -->
                         <a href="https://wa.me/918693829219?text={{ urlencode('Hi! I want to know about Real Estate Management System') }}"
                            target="_blank" rel="noopener" class="btn btn--primary">Enquire →</a>
                     </div>
@@ -236,9 +236,9 @@
                         <li>Auto-reply bots</li>
                     </ul>
                     <div class="prod-card__footer">
-                        <div>
+                        <!-- <div>
                             <div class="prod-card__price">₹7,999 <sub>one-time</sub></div>
-                        </div>
+                        </div> -->
                         <a href="https://wa.me/918693829219?text={{ urlencode('Hi! I want to know about WhatsApp Marketing System') }}"
                            target="_blank" rel="noopener" class="btn btn--primary">Enquire →</a>
                     </div>

@@ -49,12 +49,12 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <div class="product__price-row">
+                        <!-- <div class="product__price-row">
                             <div class="product__price">{{ $p['price'] }}</div>
                             @if (!empty($p['old_price']))
                                 <div class="product__old">{{ $p['old_price'] }}</div>
                             @endif
-                        </div>
+                        </div> -->
                         <a href="https://wa.me/918693829219?text={{ urlencode('Hi ksteps Tech! I want to know more about: ' . $p['name']) }}"
                            target="_blank" rel="noopener"
                            class="btn btn--primary product__btn">

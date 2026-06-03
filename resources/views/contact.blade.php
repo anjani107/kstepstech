@@ -28,19 +28,19 @@
                     </li>
                     <li>
                         <small>Email</small>
-                        <strong><a href="mailto:hello@kstepssoftware.com">hello@kstepssoftware.com</a></strong>
+                        <strong><a href="mailto:support@kstepstech.com">support@kstepstech.com</a></strong>
                     </li>
                     <li>
                         <small>Instagram</small>
-                        <strong><a href="https://instagram.com/kstepssoftware" target="_blank" rel="noopener">@kstepssoftware</a></strong>
+                        <strong><a href="https://instagram.com/kstepstech" target="_blank" rel="noopener">@kstepstech</a></strong>
                     </li>
                     <li>
                         <small>YouTube</small>
-                        <strong><a href="https://youtube.com/@kstepssoftware" target="_blank" rel="noopener">@kstepssoftware</a></strong>
+                        <strong><a href="https://youtube.com/@kstepstech" target="_blank" rel="noopener">@kstepstech</a></strong>
                     </li>
                     <li>
                         <small>Business Hours</small>
-                        <strong>Mon–Sat · 9:00–19:00 IST</strong>
+                        <strong>Mon–Sat · 9:00–19:00 </strong>
                     </li>
                 </ul>
 

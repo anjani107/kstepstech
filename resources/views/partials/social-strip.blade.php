@@ -17,7 +17,7 @@
                 </div>
                 <h3>WhatsApp</h3>
                 <p>Chat directly with our team for demos, pricing, and support — we reply within minutes.</p>
-                <a href="https://wa.me/911234567890?text=Hi%20KSteps%20Software%21%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener">Send a message ↗</a>
+                <a href="https://wa.me/918693829219?text=Hi%20KSteps%20tech%21%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener">Send a message ↗</a>
             </div>
 
             <!-- Instagram -->
@@ -31,7 +31,7 @@
                 </div>
                 <h3>Instagram</h3>
                 <p>Product demos, tips, client success stories, and behind-the-scenes — follow us for daily updates.</p>
-                <a href="https://instagram.com/kstepssoftware" target="_blank" rel="noopener">@kstepssoftware ↗</a>
+                <a href="https://instagram.com/kstepstech" target="_blank" rel="noopener">@kstepstech ↗</a>
             </div>
 
             <!-- YouTube -->
