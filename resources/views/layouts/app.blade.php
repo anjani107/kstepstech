@@ -43,7 +43,10 @@
                 <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'is-active' : '' }}">Home</a>
                 <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'is-active' : '' }}">Services</a>
                 <a href="{{ route('products') }}" class="{{ request()->routeIs('products') ? 'is-active' : '' }}">Products</a>
+                <a href="{{ route('portfolio') }}" class="{{ request()->routeIs('portfolio') ? 'is-active' : '' }}">Portfolio</a>
                 <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'is-active' : '' }}">About Us</a>
+                <a href="{{ route('blog') }}" class="{{ request()->routeIs('blog') || request()->routeIs('blog.show') ? 'is-active' : '' }}">Blog</a>
+                <a href="{{ route('careers') }}" class="{{ request()->routeIs('careers') ? 'is-active' : '' }}">Careers</a>
                 <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'is-active' : '' }}">Contact</a>
             </nav>
 
@@ -93,7 +96,10 @@
                     <h4>Company</h4>
                     <a href="{{ route('home') }}">Home</a>
                     <a href="{{ route('services') }}">Services</a>
+                    <a href="{{ route('portfolio') }}">Portfolio</a>
                     <a href="{{ route('about') }}">About Us</a>
+                    <a href="{{ route('blog') }}">Blog</a>
+                    <a href="{{ route('careers') }}">Careers</a>
                     <a href="{{ route('contact') }}">Contact</a>
                 </div>
 
@@ -144,9 +150,31 @@
         const l = document.getElementById('navLinks');
         if (t) t.addEventListener('click', () => l.classList.toggle('is-open'));
 
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function animateCount(el) {
+            const target = parseFloat(el.dataset.count);
+            const decimals = parseInt(el.dataset.decimals || '0', 10);
+            const suffix = el.dataset.suffix || '';
+            if (prefersReducedMotion || isNaN(target)) { el.textContent = target.toFixed(decimals) + suffix; return; }
+            const duration = 1200;
+            const start = performance.now();
+            function tick(now) {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = (target * eased).toFixed(decimals) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-visible');
+                    e.target.querySelectorAll('[data-count]').forEach(animateCount);
+                    observer.unobserve(e.target);
+                }
             });
         }, { threshold: 0.12 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));

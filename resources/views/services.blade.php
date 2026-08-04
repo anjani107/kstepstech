@@ -17,18 +17,18 @@
     </div>
 </section>
 
-{{-- SERVICES CARDS --}}
+{{-- PRODUCT SUPPORT SERVICES --}}
 <section class="section section--light" style="padding-top:60px;">
     <div class="container">
 
         <div class="section__head reveal" style="margin-bottom:44px;">
             <p class="section__eyebrow">What We Offer</p>
-            <h2 class="section__title">Six Ways We <span>Support You</span></h2>
+            <h2 class="section__title">Ways We <span>Support You</span></h2>
             <p class="section__sub">Every service is included or available as an add-on — we never leave you alone with a piece of software.</p>
         </div>
 
         <div class="feat-grid reveal">
-            @foreach ($services as $s)
+            @foreach ($services->where('category', 'support') as $s)
                 <div class="feat-card" style="text-align:left;">
                     <div class="feat-card__icon" style="margin-left:0;">{{ $s['icon'] }}</div>
                     <h3 class="feat-card__title">{{ $s['title'] }}</h3>
@@ -42,6 +42,40 @@
                     </ul>
                 </div>
             @endforeach
+        </div>
+
+    </div>
+</section>
+
+{{-- WEB, APP & DIGITAL GROWTH SERVICES --}}
+<section class="section">
+    <div class="container">
+
+        <div class="section__head reveal" style="margin-bottom:44px;">
+            <p class="section__eyebrow">Also Available</p>
+            <h2 class="section__title">Web, App &amp; <span>Digital Growth</span></h2>
+            <p class="section__sub">Beyond our core products, our team also builds and grows your wider digital presence — website, app, store, and traffic.</p>
+        </div>
+
+        <div class="feat-grid reveal">
+            @foreach ($services->where('category', 'growth') as $s)
+                <div class="feat-card" style="text-align:left;">
+                    <div class="feat-card__icon" style="margin-left:0;">{{ $s['icon'] }}</div>
+                    <h3 class="feat-card__title">{{ $s['title'] }}</h3>
+                    <p class="feat-card__desc">{{ $s['description'] }}</p>
+                    <ul style="list-style:none; margin-top:14px;">
+                        @foreach ($s['features'] as $f)
+                            <li style="font-size:13px; font-weight:500; padding:4px 0; color:#555; display:flex; align-items:center; gap:7px;">
+                                <span style="color:#f5a623; font-weight:800; font-size:11px;">✓</span> {{ $f }}
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endforeach
+        </div>
+
+        <div style="text-align:center; margin-top:44px;">
+            <a href="{{ route('contact') }}" class="btn btn--dark">Discuss Your Project →</a>
         </div>
 
     </div>

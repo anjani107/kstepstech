@@ -7,7 +7,7 @@
 {{-- ═══════════════════════════════════════════
      HERO
 ═══════════════════════════════════════════ --}}
-<section class="hero">
+<section class="hero hero--animated">
     <div class="container">
         <div class="hero__grid">
 
@@ -44,15 +44,15 @@
 
                 <div class="hero__stat-grid">
                     <div class="hero__stat">
-                        <div class="hero__stat-num">500+</div>
+                        <div class="hero__stat-num" data-count="500" data-suffix="+">0</div>
                         <div class="hero__stat-label">Businesses Served</div>
                     </div>
                     <div class="hero__stat">
-                        <div class="hero__stat-num">4</div>
+                        <div class="hero__stat-num" data-count="4">0</div>
                         <div class="hero__stat-label">Core Products</div>
                     </div>
                     <div class="hero__stat">
-                        <div class="hero__stat-num">99.9%</div>
+                        <div class="hero__stat-num" data-count="99.9" data-decimals="1" data-suffix="%">0%</div>
                         <div class="hero__stat-label">Uptime SLA</div>
                     </div>
                     <div class="hero__stat">
@@ -64,7 +64,7 @@
                 <div class="hero__products">
                     <div class="hero__product-item">
                         <div class="hero__product-icon" style="background:#e8f4fd;">🎓</div>
-                        Classes Management System
+                        Vidhyapro
                     </div>
                     <div class="hero__product-item">
                         <div class="hero__product-icon" style="background:#e8f8f0;">🏥</div>
@@ -124,16 +124,16 @@
             </p>
         </div>
 
-        <div class="prod-grid reveal">
+        <div class="prod-grid">
 
             {{-- Classes --}}
-            <div class="prod-card prod-card--edu">
+            <div class="prod-card prod-card--edu reveal">
                 <div class="prod-card__head">
                     <div class="prod-card__icon-row">
                         <div class="prod-card__icon">🎓</div>
                     </div>
                     <div class="prod-card__cat">Education Software</div>
-                    <h3 class="prod-card__name">Classes Management System</h3>
+                    <h3 class="prod-card__name">Vidhyapro</h3>
                     <p class="prod-card__desc">End-to-end platform for schools and coaching centres — from enrollment to exam results.</p>
                 </div>
                 <div class="prod-card__body">
@@ -157,7 +157,7 @@
             </div>
 
             {{-- Clinic --}}
-            <div class="prod-card prod-card--health">
+            <div class="prod-card prod-card--health reveal">
                 <div class="prod-card__head">
                     <div class="prod-card__icon-row">
                         <div class="prod-card__icon">🏥</div>
@@ -186,7 +186,7 @@
             </div>
 
             {{-- Real Estate --}}
-            <div class="prod-card prod-card--realty">
+            <div class="prod-card prod-card--realty reveal">
                 <div class="prod-card__head">
                     <div class="prod-card__icon-row">
                         <div class="prod-card__icon">🏠</div>
@@ -216,7 +216,7 @@
             </div>
 
             {{-- WhatsApp --}}
-            <div class="prod-card prod-card--wa">
+            <div class="prod-card prod-card--wa reveal">
                 <div class="prod-card__head">
                     <div class="prod-card__icon-row">
                         <div class="prod-card__icon">💬</div>
@@ -255,6 +255,51 @@
 </section>
 
 {{-- ═══════════════════════════════════════════
+     CASE STUDIES / OUR WORK
+═══════════════════════════════════════════ --}}
+<section class="section">
+    <div class="container">
+
+        <div class="section__head reveal">
+            <p class="section__eyebrow">Our Work</p>
+            <h2 class="section__title">Real Results, <span>Not Just Promises</span></h2>
+            <p class="section__sub">
+                A look at how schools, clinics, and real estate teams use ksteps Tech day to day — with the numbers to show for it.
+            </p>
+        </div>
+
+        <div class="portfolio-grid portfolio-grid--teaser">
+            @foreach ($caseStudies as $project)
+                <div class="portfolio-card portfolio-card--{{ $project['category'] }} reveal">
+                    <div class="portfolio-card__cover">
+                        <span class="portfolio-card__badge">{{ $project['badge'] }}</span>
+                        {{ $project['icon'] }}
+                    </div>
+                    <div class="portfolio-card__body">
+                        <div class="portfolio-card__client">{{ $project['client'] }}</div>
+                        <h3 class="portfolio-card__title">{{ $project['title'] }}</h3>
+                        <p class="portfolio-card__desc">{{ $project['description'] }}</p>
+                        <div class="portfolio-card__results">
+                            @foreach ($project['results'] as $result)
+                                <div>
+                                    <div class="portfolio-card__result-num">{{ $result['num'] }}</div>
+                                    <div class="portfolio-card__result-label">{{ $result['label'] }}</div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div style="text-align:center; margin-top:44px;">
+            <a href="{{ route('portfolio') }}" class="btn btn--dark">View Full Portfolio →</a>
+        </div>
+
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
      WHY KSTEPS
 ═══════════════════════════════════════════ --}}
 <section class="section">
@@ -269,21 +314,21 @@
             </p>
         </div>
 
-        <div class="feat-grid reveal">
+        <div class="feat-grid">
 
-            <div class="feat-card">
+            <div class="feat-card reveal">
                 <div class="feat-card__icon">⚡</div>
                 <h3 class="feat-card__title">Fast Deployment</h3>
                 <p class="feat-card__desc">Get up and running in days, not months. We handle setup, data migration, and staff training end-to-end — so you don't have to.</p>
             </div>
 
-            <div class="feat-card">
+            <div class="feat-card reveal">
                 <div class="feat-card__icon">🔒</div>
                 <h3 class="feat-card__title">Secure &amp; Reliable</h3>
                 <p class="feat-card__desc">Enterprise-grade security, daily automated backups, and a 99.9% uptime SLA — your business data is always protected and available.</p>
             </div>
 
-            <div class="feat-card">
+            <div class="feat-card reveal">
                 <div class="feat-card__icon">🤝</div>
                 <h3 class="feat-card__title">Real Human Support</h3>
                 <p class="feat-card__desc">Dedicated 24/7 support via WhatsApp, phone, and email — real people who know your system inside out. No bots, no ticket queues.</p>
@@ -437,15 +482,15 @@
     <div class="container">
         <div class="stats-grid reveal">
             <div class="stat-item">
-                <div class="stat-item__num">500+</div>
+                <div class="stat-item__num" data-count="500" data-suffix="+">0</div>
                 <div class="stat-item__label">Businesses Served</div>
             </div>
             <div class="stat-item">
-                <div class="stat-item__num">4</div>
+                <div class="stat-item__num" data-count="4">0</div>
                 <div class="stat-item__label">Core Products</div>
             </div>
             <div class="stat-item">
-                <div class="stat-item__num">99.9%</div>
+                <div class="stat-item__num" data-count="99.9" data-decimals="1" data-suffix="%">0%</div>
                 <div class="stat-item__label">Uptime SLA</div>
             </div>
             <div class="stat-item">
@@ -470,9 +515,9 @@
             </p>
         </div>
 
-        <div class="testi-grid reveal">
+        <div class="testi-grid">
 
-            <div class="testi-card">
+            <div class="testi-card reveal">
                 <div class="testi-card__stars">★★★★★</div>
                 <p class="testi-card__text">The Classes Management System completely transformed how we run our coaching centre. Fee collection, attendance, and results — all in one place. The team set it up in less than a week!</p>
                 <div class="testi-card__author">
@@ -484,7 +529,7 @@
                 </div>
             </div>
 
-            <div class="testi-card">
+            <div class="testi-card reveal">
                 <div class="testi-card__stars">★★★★★</div>
                 <p class="testi-card__text">We switched from paper registers to the Clinic Management System and the difference is incredible. Patient history, prescriptions, billing — everything is instant. Support team is always available on WhatsApp.</p>
                 <div class="testi-card__author">
@@ -496,7 +541,7 @@
                 </div>
             </div>
 
-            <div class="testi-card">
+            <div class="testi-card reveal">
                 <div class="testi-card__stars">★★★★★</div>
                 <p class="testi-card__text">The WhatsApp Marketing System helped us reach 5,000 customers in one click. Campaign analytics are brilliant — we can see who read the message and who responded. ROI is excellent.</p>
                 <div class="testi-card__author">
