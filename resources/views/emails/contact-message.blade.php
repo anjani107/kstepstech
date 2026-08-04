@@ -9,7 +9,7 @@ You have received a new message from the **ksteps Tech** website contact form.
 |---|---|
 | **Name** | {{ $senderName }} |
 | **Email** | {{ $senderEmail }} |
-| **Subject** | {{ $subject }} |
+| **Subject** | {{ $messageSubject }} |
 
 ---
 
